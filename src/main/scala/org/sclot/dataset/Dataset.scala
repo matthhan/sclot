@@ -8,5 +8,5 @@ trait Dataset {
 }
 object Dataset {
   def readFromCsvFile(path:String):Option[Dataset] = (readStringFromFile _ ).andThen(parseCsv)(path)
-  def apply(x:String) = readFromCsvFile(x)
+  def apply(x:String) = readFromCsvFile(x).get
 }

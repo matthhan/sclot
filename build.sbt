@@ -8,5 +8,6 @@ version      := "0.0.1"
 name := "sclot"
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "3.0.1" % "test"
+  "org.scalatest" %% "scalatest" % "3.0.1" % "test",
+  "com.typesafe" % "config" % "1.3.1"
 )
