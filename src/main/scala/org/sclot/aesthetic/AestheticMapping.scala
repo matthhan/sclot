@@ -1,14 +1,9 @@
 package org.sclot.aesthetic
 
-trait AestheticMapping {
-  def +(other:AestheticMapping):AestheticMapping
-}
-
-object AestheticMapping {
-  implicit class MapAsAestheticMapping(map:Map[Aesthetic,String]) extends AestheticMapping {
-    //TODO: implement
-    def +(other:AestheticMapping):AestheticMapping = Map[Aesthetic,String]()
+case class AestheticMapping(val maps:(String,Aesthetic)*){
+  //TODO ensure that each asthetic is only mapped to once
+  def +(other:AestheticMapping):AestheticMapping = {
+    AestheticMapping((this.maps ++ other.maps):_*)
   }
 }
-
 

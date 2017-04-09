@@ -8,6 +8,7 @@ import org.sclot.aesthetic.AestheticMapping._
 import org.sclot.geometric_object.Point
 
 object Playground extends App {
-  val aesm= Map(XAxis() -> "hay",YAxis() -> "ho").asInstanceOf[AestheticMapping]
-  Dataset("sampleData/blub.csv") + aesm + Point()
+  val expr = Dataset("sampleData/blub.csv") + AestheticMapping("hay" -> XAxis(), "ho" -> YAxis()) + Point()
+  println(expr.evaluate())
+
 }
