@@ -20,8 +20,6 @@ object Column {
     val name = strings.head
     val vals = strings.tail
     val kindToUse = DataKind.findBestKind(vals)
-    println(vals)
-    println(kindToUse)
     kindToUse match {
       case Integral => new IntegralColumn(name,vals.map(_.toInt))
       case Numeral => new NumeralColumn(name,vals.map(_.toDouble))
