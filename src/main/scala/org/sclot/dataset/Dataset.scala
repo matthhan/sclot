@@ -1,7 +1,9 @@
 package org.sclot.dataset
 import org.sclot.parse.csv.CsvParser.parseCsv
 import org.sclot.util.FileHandling.readStringFromFile
-trait Dataset {
+import org.sclot.expressions.AtomicPlotExpression
+
+trait Dataset extends AtomicPlotExpression {
   def columns:Seq[Column]
   def size:Int
   def names:Seq[String]
